@@ -1,0 +1,3106 @@
+<!DOCTYPE html>
+<html lang="pt-br"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RENOVE — Transformação Residencial Premium</title>
+  <meta name="description" content="Revolucione sua casa com envelopamento de alta performance. Móveis, eletrodomésticos e superfícies renovados com acabamento profissional e garantia.">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          renove: {
+            primary: '#2c3e32',    // Verde escuro sofisticado
+            secondary: '#5a6b5d',  // Verde médio
+            accent: '#d4af37',     // Dourado elegante
+            charcoal: '#1a1a1a',  // Preto moderno
+            pearl: '#f8f9fa',     // Branco suave
+            sage: '#8a9b8a',      // Verde acinzentado claro
+            copper: '#b87333',    // Bronze/cobre
+            mist: '#f5f7f5',      // Verde muito claro
+          }
+        },
+        boxShadow: {
+          'soft': '0 10px 40px rgba(0,0,0,0.06)',
+          'elegant': '0 20px 60px rgba(0,0,0,0.08)',
+          'premium': '0 25px 80px rgba(0,0,0,0.12)',
+        },
+        fontFamily: {
+          'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
+          'display': ['Space Grotesk', 'ui-sans-serif', 'system-ui'],
+        },
+        animation: {
+          'fade-in': 'fadeIn 0.8s ease-out',
+          'slide-up': 'slideUp 0.6s ease-out',
+          'scale-in': 'scaleIn 0.5s ease-out',
+        }
+      }
+    }
+  }
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <!-- Swiper CSS -->
+  
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <style>/* style.css - RENOVE custom styles */
+/* Tailwind via CDN is still used for utility classes, but custom styles go here. */
+
+/* Custom animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* Enhanced animations for scroll effects */
+.reveal {
+    opacity: 0;
+    transform: translateY(340px);
+    transition: all 0.1s ease-out;
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Floating animation class */
+.floating-element {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Hover effects enhancement */
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Button shimmer effect */
+.btn-premium {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent);
+    transition: left 0.5s;
+}
+
+.btn-premium:hover::before {
+    left: 100%;
+}
+
+/* Pulse glow for accent elements */
+.pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced grain texture */
+.grain {
+    background-image:
+        radial-gradient(rgba(44, 62, 50, 0.03) 1px, transparent 1px),
+        radial-gradient(rgba(44, 62, 50, 0.02) 1px, transparent 1px);
+    background-size: 12px 12px, 6px 6px;
+    background-position: 0 0, 6px 6px;
+}
+
+/* Reveal animations */
+.reveal {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Enhanced Before/After slider */
+.ba-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease;
+}
+
+.ba-wrapper:hover {
+    transform: translateY(-5px);
+}
+
+.ba-after {
+    position: absolute;
+    inset: 0;
+    width: var(--ba, 50%);
+    overflow: hidden;
+}
+
+.ba-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--ba, 50%);
+    width: 3px;
+    background: linear-gradient(to bottom, #d4af37, #b87333);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.9), 0 8px 32px rgba(0, 0, 0, 0.2);
+    cursor: ew-resize;
+    z-index: 10;
+}
+
+.ba-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d4af37, #b87333);
+    border: 4px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: ew-resize;
+}
+
+.ba-dot::before,
+.ba-dot::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 2px;
+    background: white;
+    border-radius: 1px;
+}
+
+.ba-dot::before {
+    transform: translateX(-3px);
+}
+
+.ba-dot::after {
+    transform: translateX(3px);
+}
+
+.ba-wrapper img {
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+/* Gallery navigation */
+.gallery-nav {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.gallery-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(44, 62, 50, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gallery-dot.active {
+    background: #d4af37;
+    transform: scale(1.2);
+}
+
+.gallery-nav-item {
+    display: block;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 500;
+    color: #5a6b5d;
+    /* renove-secondary */
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.gallery-nav-item:hover {
+    background-color: rgba(44, 62, 50, 0.05);
+    /* renove-primary/5% */
+    color: #2c3e32;
+    /* renove-primary */
+}
+
+.gallery-nav-item.active {
+    background-color: #2c3e32;
+    /* renove-primary */
+    color: white;
+    border-color: #d4af37;
+    /* renove-accent */
+    box-shadow: 0 8px 24px rgba(44, 62, 50, 0.15);
+}
+
+/* Enhanced hover effects */
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+}
+
+/* Custom form styles */
+.form-input {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    background: rgba(248, 249, 250, 0.8);
+}
+
+.form-input:focus {
+    border-color: #d4af37;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+/* Premium button styles */
+.btn-premium {
+    background: linear-gradient(135deg, #d4af37, #b87333);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    padding: 16px 32px;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3);
+}
+
+.btn-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(212, 175, 55, 0.4);
+}
+
+.btn-premium:active {
+    transform: translateY(0);
+}
+
+.gallery-item {
+    transition: all 0.4s ease;
+    animation: scaleIn 0.5s ease-out;
+}
+
+.gallery-item.hidden {
+    display: none;
+}
+
+/* Enhanced Hero Before/After */
+.hero-ba-container {
+    cursor: ew-resize;
+    user-select: none;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-after-section {
+    transition: clip-path 0.1s ease;
+    will-change: clip-path;
+}
+
+.hero-divider {
+    transition: left 0.1s ease;
+    will-change: left;
+    transform: translateX(-50%);
+}
+
+.hero-handle {
+    transition: transform 0.2s ease;
+    backdrop-filter: blur(10px);
+    will-change: transform;
+    cursor: grab;
+}
+
+.hero-handle:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+.hero-handle:active {
+    cursor: grabbing;
+    transform: translate(-50%, -50%) scale(0.98);
+}
+
+.hero-progress {
+    transition: width 0.1s ease;
+    will-change: width;
+}
+
+/* Pulse animation for indicators */
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Gallery Filter Buttons */
+.gallery-filter-btn {
+    padding: 12px 24px;
+    background: white;
+    color: #5a6b5d;
+    border: 1px solid #f8f9fa;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-filter-btn:hover {
+    border-color: #d4af37;
+    color: #d4af37;
+}
+
+.gallery-filter-btn.active {
+    background: #d4af37;
+    color: white;
+    border-color: #d4af37;
+}
+
+/* Swiper Customization */
+.gallerySwiper {
+    padding-bottom: 64px;
+}
+
+.gallerySwiper .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: rgba(90, 107, 93, 0.3);
+}
+
+.gallerySwiper .swiper-pagination-bullet-active {
+    background: #d4af37;
+}
+
+.gallerySwiper .swiper-button-next,
+.gallerySwiper .swiper-button-prev {
+    width: 48px;
+    height: 48px;
+    margin-top: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #d4af37;
+}
+
+.gallerySwiper .swiper-button-next:after,
+.gallerySwiper .swiper-button-prev:after {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* New Before/After Design */
+.ba-container {
+    cursor: ew-resize;
+    user-select: none;
+}
+
+.ba-overlay {
+    clip-path: polygon(0 0, var(--ba-position, 50%) 0, var(--ba-position, 50%) 100%, 0% 100%);
+    transition: clip-path 0.1s ease-out;
+}
+
+.ba-divider {
+    left: var(--ba-position, 50%);
+    transform: translateX(-50%);
+    transition: left 0.1s ease;
+}
+
+.ba-handle {
+    transition: transform 0.2s ease;
+    user-select: none;
+}
+
+.ba-handle:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.ba-handle:active {
+    cursor: grabbing;
+}
+
+/* Gallery Before/After Components */
+.gallery-ba-container {
+    cursor: ew-resize;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-ba-overlay {
+    position: absolute;
+    inset: 0;
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+    transition: clip-path 0.1s ease;
+    will-change: clip-path;
+    z-index: 2;
+}
+
+.gallery-ba-divider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    background: linear-gradient(to bottom, #d4af37, #b87333);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.9), 0 4px 16px rgba(0, 0, 0, 0.15);
+    transform: translateX(-50%);
+    transition: left 0.1s ease;
+    will-change: left;
+    z-index: 3;
+}
+
+.gallery-ba-handle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d4af37, #b87333);
+    border: 3px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease;
+    user-select: none;
+    cursor: grab;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-ba-handle::before,
+.gallery-ba-handle::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 2px;
+    background: white;
+    border-radius: 1px;
+}
+
+.gallery-ba-handle::before {
+    transform: translateX(-2px);
+}
+
+.gallery-ba-handle::after {
+    transform: translateX(2px);
+}
+
+.gallery-ba-handle:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.gallery-ba-handle:active {
+    cursor: grabbing;
+    transform: translate(-50%, -50%) scale(0.95);
+}
+
+.gallery-ba-container img {
+    user-select: none;
+    pointer-events: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Labels for gallery before/after */
+.gallery-ba-label {
+    position: absolute;
+    bottom: 16px;
+    padding: 8px 16px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    backdrop-filter: blur(10px);
+    z-index: 5;
+}
+
+.gallery-ba-label.before {
+    left: 16px;
+}
+
+.gallery-ba-label.after {
+    right: 16px;
+}
+
+/* Modern Gallery Styles */
+.modernGallery {
+    overflow: visible;
+    padding: 0 0 80px 0;
+}
+
+.modern-slide-container {
+    height: 600px;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modern-slide-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.15);
+}
+
+.split-screen-wrapper {
+    position: relative;
+    height: 70%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.before-side,
+.after-side {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.before-side {
+    left: 0;
+    z-index: 1;
+}
+
+.after-side {
+    right: 0;
+    z-index: 2;
+    transform: translateX(100%);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.split-screen-wrapper.show-after .after-side {
+    transform: translateX(0);
+}
+
+.split-screen-wrapper.show-after .before-side {
+    transform: translateX(-100%);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-container {
+    position: relative;
+    width: 200%;
+    height: 100%;
+}
+
+.before-side .image-container {
+    margin-left: 0;
+}
+
+.after-side .image-container {
+    margin-left: -100%;
+}
+
+.slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.split-screen-wrapper:hover .slide-image {
+    transform: scale(1.05);
+}
+
+.overlay-label {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 8px 16px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+.before-label {
+    background: rgba(239, 68, 68, 0.9);
+}
+
+.after-label {
+    background: rgba(34, 197, 94, 0.9);
+}
+
+.center-divider {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #d4af37, #b87333);
+    transform: translateX(-50%);
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.split-screen-wrapper:hover .center-divider {
+    opacity: 1;
+}
+
+.divider-line {
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.9);
+}
+
+.divider-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d4af37;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.split-screen-wrapper:hover .divider-handle {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.slide-info {
+    height: 30%;
+    padding: 24px;
+    background: white;
+    display: flex;
+    align-items: center;
+}
+
+.info-content {
+    width: 100%;
+}
+
+.slide-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c3e32;
+    margin-bottom: 8px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.slide-description {
+    color: #5a6b5d;
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.slide-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 4px 12px;
+    background: linear-gradient(135deg, #d4af37, #b87333);
+    color: white;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Modern Navigation */
+.modern-pagination .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: rgba(44, 62, 50, 0.3);
+    opacity: 1;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.modern-pagination .swiper-pagination-bullet-active {
+    background: linear-gradient(135deg, #d4af37, #b87333);
+    transform: scale(1.3);
+}
+
+.modern-nav-button {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    color: #d4af37;
+    transition: all 0.3s ease;
+}
+
+.modern-nav-button:hover {
+    background: #d4af37;
+    color: white;
+    transform: scale(1.1);
+}
+
+.modern-nav-button:after {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* New Gallery Styles */
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    background: white;
+    border: 2px solid #e2e8f0;
+    color: #64748b;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    border-color: #d4af37;
+    color: #d4af37;
+}
+
+.filter-btn.active {
+    background: #d4af37;
+    color: white;
+    border-color: #d4af37;
+}
+
+.project-card {
+    opacity: 1;
+    transition: all 0.5s ease-out;
+}
+
+.project-card.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+.project-container {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.project-container:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: translateY(-8px);
+}
+
+.before-after-wrapper {
+    position: relative;
+    height: 16rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .before-after-wrapper {
+        height: 18rem;
+    }
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.before-image,
+.after-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.7s ease-in-out;
+}
+
+.after-image {
+    opacity: 0;
+    transform: scale(1.05);
+}
+
+.before-after-wrapper.revealed .before-image {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.before-after-wrapper.revealed .after-image {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.overlay-labels {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.before-label,
+.after-label {
+    position: absolute;
+    top: 1rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 700;
+    border-radius: 9999px;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+}
+
+.before-label {
+    left: 1rem;
+    opacity: 1;
+}
+
+.after-label {
+    right: 1rem;
+    opacity: 0;
+}
+
+.before-after-wrapper.revealed .before-label {
+    opacity: 0;
+}
+
+.before-after-wrapper.revealed .after-label {
+    opacity: 1;
+}
+
+.toggle-button {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d4af37;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.toggle-button:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-bottom: 0.5rem;
+}
+
+.project-description {
+    color: #64748b;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    padding: 0.25rem 0.75rem;
+    background: rgba(212, 175, 55, 0.1);
+    color: #d4af37;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 9999px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .before-after-wrapper {
+        height: 14rem;
+    }
+
+    .project-info {
+        padding: 1rem;
+    }
+
+    .project-title {
+        font-size: 1.125rem;
+    }
+
+    .filter-btn {
+        padding: 0.25rem 0.75rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Enhanced Typography for Modern Look */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.font-display {
+    letter-spacing: -0.02em;
+    font-feature-settings: "ss01" 1, "ss02" 1;
+}
+
+/* Improve button typography */
+.btn-premium,
+.filter-btn,
+button {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+
+/* Footer Interactive Elements */
+footer a:hover {
+    transform: translateY(-1px);
+    transition: all 0.3s ease;
+}
+
+footer .w-10.h-10 {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+footer .w-10.h-10:hover {
+    background: linear-gradient(135deg, rgba(223, 190, 106, 0.2), rgba(185, 144, 88, 0.2)) !important;
+    border-color: rgba(223, 190, 106, 0.3);
+    transform: scale(1.1) translateY(-1px);
+}
+
+/* Footer Stats Animation */
+footer .grid.grid-cols-3 {
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+/* Footer Pattern Animation */
+footer .absolute.inset-0.opacity-5 {
+    animation: subtleShift 10s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subtleShift {
+
+    0%,
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+
+    50% {
+        transform: translateX(2px) translateY(2px);
+    }
+}
+
+/* Footer Link Hover Effects */
+footer a[href^="#"]:hover {
+    color: #dfbe6a !important;
+    padding-left: 4px;
+    transition: all 0.3s ease;
+}
+
+footer .w-1\.5.h-1\.5 {
+    transition: all 0.3s ease;
+}
+
+footer a[href^="#"]:hover .w-1\.5.h-1\.5 {
+    background-color: #dfbe6a !important;
+    transform: scale(1.2);
+}
+
+/* Revolutionary Testimonials Styles */
+.testimonials-floating-bg {
+    animation: float 6s ease-in-out infinite;
+}
+
+.testimonials-floating-bg:nth-child(2) {
+    animation-delay: -2s;
+}
+
+.testimonials-floating-bg:nth-child(3) {
+    animation-delay: -4s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(10px, -10px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-5px, 5px) scale(0.9);
+    }
+}
+
+/* Video Testimonial Hover Effects */
+.video-testimonial-card:hover .video-play-button {
+    transform: scale(1.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.video-testimonial-card:hover .video-thumbnail {
+    transform: scale(1.05);
+}
+
+/* Live Indicator Animation */
+.live-indicator {
+    animation: pulse-live 2s ease-in-out infinite;
+}
+
+@keyframes pulse-live {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scale(1.05);
+    }
+}
+
+/* Premium Quote Styling */
+.premium-quote::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, rgba(212, 175, 55, 0.1), rgba(185, 144, 88, 0.1));
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.premium-quote:hover::before {
+    opacity: 1;
+}
+
+/* Stats Banner Hover Effects */
+.stats-banner .group:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+/* Enhanced Background Patterns */
+.testimonials-bg-pattern {
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(44, 62, 50, 0.1) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.02) 50%, transparent 70%);
+    animation: backgroundShift 15s ease-in-out infinite;
+}
+
+@keyframes backgroundShift {
+
+    0%,
+    100% {
+        background-position: 0% 0%, 100% 100%, 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%, 0% 0%, 100% 100%;
+    }
+}</style>
+</head>
+<body class="bg-white text-renove-charcoal font-sans selection:bg-renove-accent/20 antialiased">
+  <!-- Navigation Bar -->
+  <nav class="fixed w-full bg-white/95 backdrop-blur-md z-50 border-b border-renove-pearl shadow-soft">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <div class="flex items-center justify-center md:justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="relative">
+            <img width="180" class="w-100" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iQ2FtYWRhXzIiIGRhdGEtbmFtZT0iQ2FtYWRhIDIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDc5MC4xOCAyNjQuMDkiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTEgewogICAgICAgIGZpbGw6ICNlNjljNjc7CiAgICAgIH0KCiAgICAgIC5jbHMtMiB7CiAgICAgICAgZmlsbDogIzU4N2Q2ZTsKICAgICAgfQoKICAgICAgLmNscy0zIHsKICAgICAgICBmaWxsOiAjYzdkMTdlOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iQ2FtYWRhXzEtMiIgZGF0YS1uYW1lPSJDYW1hZGEgMSI+CiAgICA8Zz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTk2LjkyLDI2NC4wOUgwVjEwNy4zN0wxMjUuNzYsMGwxMzIuMzksMTEzLjExdjg5Ljc1bC02MS4yMyw2MS4yM1pNMTUuOTQsMjQ4LjE1aDE3NC4zOGw1MS44OS01MS44OXYtNzUuOEwxMjUuNzUsMjAuOTYsMTUuOTQsMTE0LjcydjEzMy40M1oiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTk1LjU0LDI1Ni42Yy00LjQsMC03Ljk3LTMuNTctNy45Ny03Ljk3di0zNi4xN2MwLTkuNDEsNy42Ni0xNy4wNywxNy4wNy0xNy4wN2gzOC41NGM0LjQsMCw3Ljk3LDMuNTcsNy45Nyw3Ljk3cy0zLjU3LDcuOTctNy45Nyw3Ljk3aC0zOC41NGMtLjYyLDAtMS4xMy41MS0xLjEzLDEuMTN2MzYuMTdjMCw0LjQtMy41Nyw3Ljk3LTcuOTcsNy45N1oiLz4KICAgICAgPGc+CiAgICAgICAgPHJlY3QgY2xhc3M9ImNscy0yIiB4PSI5Mi4wOSIgeT0iMTEyLjQ4IiB3aWR0aD0iMzEuNiIgaGVpZ2h0PSIzMS42Ii8+CiAgICAgICAgPHJlY3QgY2xhc3M9ImNscy0yIiB4PSIxMzQuNDYiIHk9IjExMi40OCIgd2lkdGg9IjMxLjYiIGhlaWdodD0iMzEuNiIvPgogICAgICAgIDxyZWN0IGNsYXNzPSJjbHMtMiIgeD0iOTIuMDkiIHk9IjE1NS41NyIgd2lkdGg9IjMxLjYiIGhlaWdodD0iMzEuNiIvPgogICAgICAgIDxyZWN0IGNsYXNzPSJjbHMtMyIgeD0iMTM0LjQ2IiB5PSIxNTUuNTciIHdpZHRoPSIzMS42IiBoZWlnaHQ9IjMxLjYiLz4KICAgICAgPC9nPgogICAgICA8Zz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik01MTkuMDMsODYuMTdoMTYuMDl2OTEuNzVoLTExLjc2bC01My4zMi02MC4xdjYwLjFoLTE2LjA5di05MS43NWgxMy43NWw1MS4zMyw1OS44OXYtNTkuODlaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNjIxLjg0LDE2NC40M2MtOC44Niw4LjgxLTE5LjYzLDEzLjIyLTMyLjMzLDEzLjIycy0yMy40NS00LjQxLTMyLjI3LTEzLjIyYy04LjgxLTguODEtMTMuMjItMTkuNjEtMTMuMjItMzIuMzlzNC40MS0yMy41OCwxMy4yMi0zMi4zOWM4LjgxLTguODEsMTkuNTctMTMuMjIsMzIuMjctMTMuMjJzMjMuNDcsNC40MSwzMi4zMywxMy4yMmM4Ljg1LDguODEsMTMuMjgsMTkuNjEsMTMuMjgsMzIuMzlzLTQuNDMsMjMuNTgtMTMuMjgsMzIuMzlaTTU2OS4zMywxNTIuNjVjNS40Myw1LjM5LDEyLjE2LDguMDgsMjAuMTcsOC4wOHMxNC43NC0yLjY5LDIwLjE3LTguMDhjNS40My01LjM5LDguMTUtMTIuMjYsOC4xNS0yMC42MXMtMi43Mi0xNS4yNC04LjE1LTIwLjY4Yy01LjQzLTUuNDMtMTIuMTUtOC4xNS0yMC4xNy04LjE1cy0xNC43NSwyLjcyLTIwLjE3LDguMTVjLTUuNDMsNS40My04LjE0LDEyLjMyLTguMTQsMjAuNjhzMi43MSwxNS4yMyw4LjE0LDIwLjYxWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTY2Mi40LDE3Ni45MWwtMjkuMTctODkuNzVoMTYuNjJsMjMuMjUsNzAuNTQsMjMuMDktNzAuNTRoMTYuNzVsLTI5LjMsODkuNzVoLTIxLjIzWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTY3Mi44OCwxNTcuMDNsLTIzLjAzLTY5Ljg3aC0xNi42MmwyOS4xNyw4OS43NWgxNi4yMWwtNS43My0xOS44OFoiLz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik03NDEuODgsMTU5LjM5aDQ4LjN2MTcuMTdoLTY0LjM5di04OS4wNGg2My43M3YxNS4xN2gtNDcuNjR2MjMuMzhoNDQuMzd2MTYuOTFoLTQ0LjM3djE2LjQyWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTM5NC4xNCwxNTkuMzloNDguM3YxNy4xN2gtNjQuMzl2LTg5LjA0aDYzLjczdjE1LjE3aC00Ny42NHYyMy4zOGg0NC4zN3YxNi45MWgtNDQuMzd2MTYuNDJaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMzU3LjE4LDE0OS45MmM3Ljg1LTcuMDYsMTEuNzgtMTUuNzYsMTEuNzgtMjYuMXMtMy45My0xOS4wNC0xMS43OC0yNi4xYy03Ljg2LTcuMDYtMTcuNjQtMTAuNTktMjkuMzctMTAuNTloLTMzLjk1djg5LjgzaDE2LjA4di0xNi40NWgxNy44N2MuMzIsMCwuNjItLjAxLjk0LS4wMmwxMi43NCwxNi40N2gyMC44N2wtMTUuNS0yMC4yOWMzLjc0LTEuNjksNy4xOC0zLjkzLDEwLjMxLTYuNzRaTTMxMC43MiwxMDAuOTZoMTcuMWM3LjQxLDAsMTMuNDMsMi4xMSwxOC4wNyw2LjM0LDQuNjQsNC4yMyw2Ljk2LDkuNzMsNi45NiwxNi41MXMtMi4zMiwxMi4yOC02Ljk2LDE2LjUxYy00LjY0LDQuMjMtMTAuNjcsNi4zNC0xOC4wNyw2LjM0aC0xNy4xdi00NS43MVoiLz4KICAgICAgPC9nPgogICAgICA8Zz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0zMDUuMzcsMjA1LjUzaC04LjA5djguNThoOS4wNnYxLjZoLTEwLjk3di0yMC45aDEwLjQ5djEuNmgtOC41OHY3LjUyaDguMDl2MS42WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTMwOS43NiwyMDQuNTJjMC0xLjQ2LS4wNS0yLjU0LS4xMi0zLjczaDEuNzNsLjEyLDIuNTZoLjA3Yy43Ny0xLjU2LDIuNTYtMi45LDQuOTYtMi45LDEuNjYsMCw1LjEyLjkzLDUuMTIsNi4yNXY5LjAxaC0xLjkxdi04LjhjMC0yLjU3LS45Ni00Ljg2LTMuNzktNC44Ni0xLjkzLDAtMy41NCwxLjM5LTQuMDgsMy4xOC0uMTEuMzUtLjE5Ljg0LS4xOSwxLjN2OS4xN2gtMS45MXYtMTEuMloiLz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0zMjYuMDQsMjAwLjc5bDMuMjMsOC45NWMuNTQsMS40Ljk3LDIuNjYsMS4zMywzLjkxaC4wOGMuMzctMS4yMy44Ni0yLjUzLDEuMzctMy45MWwzLjI1LTguOTVoMmwtNS44NywxNC45MmgtMS43NWwtNS42Ny0xNC45MmgyLjAzWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTM0MC40OCwyMDguMzJjLjAyLDQuNDMsMi40OSw2LjE0LDUuMzYsNi4xNCwyLjAzLDAsMy4xNS0uMzksNC4wNC0uOGwuNDEsMS40M2MtLjcxLjM2LTIuMjcuOTQtNC43Ljk0LTQuMzQsMC02Ljk4LTMuMDktNi45OC03LjUxLDAtNC44MSwyLjczLTguMDcsNi42OS04LjA3LDQuNzcsMCw1LjgxLDQuNDIsNS44MSw2LjgyLDAsLjQ3LS4wMS43Ny0uMDYsMS4wNWgtMTAuNThaTTM0OS4yLDIwNi44NmMuMDQtMi4wNC0uODItNC45My00LjEtNC45My0zLjAxLDAtNC4zMiwyLjc3LTQuNTYsNC45M2g4LjY2WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTM1NC43MSwxOTMuNzNoMS45MXYyMS45OGgtMS45MXYtMjEuOThaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0zIiBkPSJNMzc0LjIyLDIwOC4xMmMwLDUuNTYtMy43NCw3LjkzLTcuMDksNy45My0zLjgzLDAtNi44MS0yLjk0LTYuODEtNy42OSwwLTUuMDksMy4yNi03LjkxLDcuMDQtNy45MSw0LjA3LDAsNi44NywzLjA1LDYuODcsNy42NlpNMzYyLjI2LDIwOC4yOWMwLDMuNSwyLjA5LDYuMjUsNC45OCw2LjI1czUuMDQtMi43NSw1LjA0LTYuMzRjMC0yLjY0LTEuMzgtNi4yMi00Ljk4LTYuMjJzLTUuMDQsMy4yOS01LjA0LDYuMzJaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0zIiBkPSJNMzc3LjgsMjA1LjU4YzAtMS45Mi0uMDUtMy40MS0uMTItNC43OWgxLjc3bC4xMiwyLjY4aC4wNmMxLjA3LTEuOTEsMi44NS0zLjAyLDUuMjktMy4wMiwzLjY3LDAsNi4yNiwzLjA4LDYuMjYsNy41NywwLDUuMzctMy4xNiw4LjAzLTYuNjUsOC4wMy0yLjA0LDAtMy44MS0uOTMtNC43Ni0yLjU3aC0uMDZ2OC4zNmgtMS45MXYtMTYuMjZaTTM3OS43MSwyMDkuNzljMCwuNC4wNC43OS4xMiwxLjE2LjU2LDIuMTksMi40LDMuNTQsNC40NywzLjU0LDMuMTcsMCw0Ljk0LTIuNjUsNC45NC02LjQsMC0zLjIyLTEuNy02LjA5LTQuODQtNi4wOS0yLjAxLDAtMy45MywxLjQ1LTQuNTEsMy43Mi0uMDkuMzgtLjE5LjgyLS4xOSwxLjIxdjIuODVaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0zIiBkPSJNNDAyLjgzLDIxNS43MWwtLjIyLTIuMDJoLS4wOGMtLjc1LDEuMTYtMi4zNSwyLjM2LTQuNTgsMi4zNi0yLjk0LDAtNC4zOS0yLjA5LTQuMzktNC4xNywwLTMuNTEsMy4wOC01LjUzLDguODgtNS40OHYtLjM4YzAtMS40NC0uMzItNC4wNy0zLjYtNC4wNS0xLjMsMC0yLjY2LjM3LTMuNywxLjA5bC0uNTEtMS4zM2MxLjI3LS44NSwyLjk2LTEuMjcsNC40OC0xLjI3LDQuMjgsMCw1LjI0LDMuMDksNS4yNCw1LjkxdjUuOGMwLDEuMjEuMDUsMi40NS4yMiwzLjU0aC0xLjc0Wk00MDIuNDcsMjA3Ljg2Yy0zLjAyLS4wOC02LjkzLjQxLTYuOTMsMy43NiwwLDIuMDIsMS4zMSwyLjkyLDIuNzYsMi45MiwyLjIzLDAsMy41Ni0xLjQsNC4wMy0yLjguMS0uMzEuMTQtLjYyLjE0LS44OHYtM1oiLz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik00MDguOTYsMjA0LjUyYzAtMS40Ni0uMDUtMi41NC0uMTItMy43M2gxLjcybC4xMiwyLjUxaC4wN2MuODktMS41OSwyLjI5LTIuODUsNC43LTIuODUsMi4wMSwwLDMuNTUsMS4yOSw0LjE4LDMuMTJoLjA2Yy40NC0uODcsMS0xLjUzLDEuNTctMS45OC45Mi0uNzMsMS45LTEuMTQsMy4zOC0xLjE0LDEuNjYsMCw0LjgsMSw0LjgsNi4zOXY4Ljg3aC0xLjg5di04LjYzYzAtMy4xMi0xLjE2LTUuMDItMy41OC01LjAyLTEuNzEsMC0zLjA2LDEuMjctMy42LDIuNzYtLjEzLjQyLS4yNC45MS0uMjQsMS40NHY5LjQ2aC0xLjg5di05LjI0YzAtMi41My0xLjE1LTQuNDItMy40MS00LjQyLTEuODUsMC0zLjI4LDEuNDktMy43OSwzLjExLS4xMy40MS0uMjEuOS0uMjEsMS40djkuMTVoLTEuODl2LTExLjJaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0zIiBkPSJNNDM0LjgxLDIwOC4zMmMuMDIsNC40MywyLjQ5LDYuMTQsNS4zNiw2LjE0LDIuMDMsMCwzLjE1LS4zOSw0LjA0LS44bC40MSwxLjQzYy0uNzEuMzYtMi4yNy45NC00LjcuOTQtNC4zNCwwLTYuOTctMy4wOS02Ljk3LTcuNTEsMC00LjgxLDIuNzMtOC4wNyw2LjY5LTguMDcsNC43NywwLDUuODEsNC40Miw1LjgxLDYuODIsMCwuNDctLjAxLjc3LS4wNiwxLjA1aC0xMC41OFpNNDQzLjUzLDIwNi44NmMuMDQtMi4wNC0uODItNC45My00LjA5LTQuOTMtMy4wMSwwLTQuMzIsMi43Ny00LjU2LDQuOTNoOC42NloiLz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik00NDkuMDQsMjA0LjUyYzAtMS40Ni0uMDUtMi41NC0uMTItMy43M2gxLjczbC4xMiwyLjU2aC4wN2MuNzctMS41NiwyLjU2LTIuOSw0Ljk2LTIuOSwxLjY2LDAsNS4xMi45Myw1LjEyLDYuMjV2OS4wMWgtMS45MXYtOC44YzAtMi41Ny0uOTYtNC44Ni0zLjc5LTQuODYtMS45MywwLTMuNTQsMS4zOS00LjA4LDMuMTgtLjExLjM1LS4xOS44NC0uMTksMS4zdjkuMTdoLTEuOTF2LTExLjJaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0zIiBkPSJNNDY3Ljk0LDE5Ni41djQuMjloNC4wNXYxLjVoLTQuMDV2OS4xNGMwLDEuODkuNTgsMywyLjExLDMsLjcyLDAsMS4yNC0uMDksMS42MS0uMjFsLjE2LDEuNDdjLS40OS4yLTEuMjEuMzYtMi4xNS4zNi0xLjEzLDAtMi4wNy0uMzYtMi42Ny0xLjA4LS42OS0uNzktLjk1LTIuMDQtLjk1LTMuNjd2LTguOTloLTIuNDF2LTEuNWgyLjQxdi0zLjczbDEuODktLjU2WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTQ4Ny43MSwyMDguMTJjMCw1LjU2LTMuNzQsNy45My03LjA5LDcuOTMtMy44MywwLTYuODEtMi45NC02LjgxLTcuNjksMC01LjA5LDMuMjYtNy45MSw3LjA0LTcuOTEsNC4wNywwLDYuODcsMy4wNSw2Ljg3LDcuNjZaTTQ3NS43NSwyMDguMjljMCwzLjUsMi4wOSw2LjI1LDQuOTgsNi4yNXM1LjA0LTIuNzUsNS4wNC02LjM0YzAtMi42NC0xLjM4LTYuMjItNC45OC02LjIycy01LjA0LDMuMjktNS4wNCw2LjMyWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTQ5Ny45NSwxOTUuMWMxLjI5LS4yOCwzLjEtLjQ1LDQuNjYtLjQ1LDIuNzMsMCw0LjQ4LjU3LDUuNjksMS43My45NS44OSwxLjUyLDIuMywxLjUyLDMuODIsMCwyLjc5LTEuNjgsNC41OS00LDUuNHYuMDdjMS42NS41NCwyLjY2LDIuMDksMy4xNiw0LjQuNjksMy4xNCwxLjEzLDQuODMsMS41NSw1LjY0aC0xLjk4Yy0uMzMtLjYxLS43OC0yLjQzLTEuMzMtNS4wNy0uNjMtMi45Ni0xLjg0LTQuMjMtNC40Ni00LjMzaC0yLjg5djkuMzloLTEuOXYtMjAuNjFaTTQ5OS44NSwyMDQuODNoM2MzLjA3LDAsNS4wNS0xLjczLDUuMDUtNC4zNiwwLTMuMDEtMi4xNS00LjI5LTUuMjUtNC4yOS0xLjMzLDAtMi4zLjEzLTIuNzkuMjZ2OC4zOVoiLz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik01MTQuNTEsMjA4LjMyYy4wMiw0LjQzLDIuNDksNi4xNCw1LjM2LDYuMTQsMi4wMywwLDMuMTUtLjM5LDQuMDQtLjhsLjQxLDEuNDNjLS43MS4zNi0yLjI3Ljk0LTQuNy45NC00LjM0LDAtNi45Ny0zLjA5LTYuOTctNy41MSwwLTQuODEsMi43My04LjA3LDYuNjktOC4wNyw0Ljc3LDAsNS44MSw0LjQyLDUuODEsNi44MiwwLC40Ny0uMDEuNzctLjA2LDEuMDVoLTEwLjU4Wk01MjMuMjMsMjA2Ljg2Yy4wNC0yLjA0LS44Mi00LjkzLTQuMDktNC45My0zLjAxLDAtNC4zMiwyLjc3LTQuNTYsNC45M2g4LjY2WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTUyOC4yMSwyMTMuNDhjLjc5LjUsMi4wNSwxLjAzLDMuMzgsMS4wMywyLjE3LDAsMy4yMS0xLjE2LDMuMjEtMi42MXMtLjg5LTIuMzItMi45NS0zLjE0Yy0yLjQ5LS45Ny0zLjgtMi4zNC0zLjgtNC4xNSwwLTIuMjUsMS43OS00LjE1LDQuNzQtNC4xNSwxLjQxLDAsMi42LjQxLDMuMzguOTNsLS42MiwxLjQ3Yy0uNTQtLjM3LTEuNTItLjg4LTIuOTMtLjg4LTEuNzYsMC0yLjcxLDEuMTEtMi43MSwyLjM3LDAsMS40My45NiwyLjA1LDIuOTMsMi44NywyLjQxLjk2LDMuODIsMi4yLDMuODIsNC40NSwwLDIuNjEtMi4wMSw0LjM2LTUuMTcsNC4zNi0xLjQ4LDAtMi44OC0uNDEtMy44Ny0xLjAzbC41OC0xLjUzWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTU0Mi42OCwxOTYuNTZjMCwuNzgtLjUyLDEuNDMtMS40MSwxLjQzLS43OCwwLTEuMzEtLjY1LTEuMzEtMS40MywwLS43Ny41OC0xLjQzLDEuMzctMS40M3MxLjM1LjYzLDEuMzUsMS40M1pNNTQwLjM3LDIxNS43MXYtMTQuOTJoMS45MXYxNC45MmgtMS45MVoiLz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik01NTkuMDQsMTkzLjczdjE4LjRjMCwxLjE2LjA1LDIuNTYuMTIsMy41OGgtMS43MWwtLjEyLTIuNjloLS4wOGMtLjc3LDEuNjMtMi41MSwzLjAzLTUuMDksMy4wMy0zLjU3LDAtNi4yOS0zLjAzLTYuMjktNy41Ni0uMDItNSwzLTguMDQsNi41OC04LjA0LDIuMzgsMCwzLjk1LDEuMTksNC42MiwyLjQ2aC4wNnYtOS4xOGgxLjkxWk01NTcuMTQsMjA2Ljc0YzAtLjM5LS4wNC0uODgtLjEzLTEuMjctLjQ2LTEuODktMi4wOC0zLjQ2LTQuMzEtMy40Ni0zLjAzLDAtNC44OCwyLjcyLTQuODgsNi4zNCwwLDMuMjQsMS41Nyw2LjEzLDQuODEsNi4xMywxLjk0LDAsMy43OC0xLjMsNC4zNy0zLjY0LjEtLjM3LjE0LS43Ni4xNC0xLjJ2LTIuOTFaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0zIiBkPSJNNTY0LjUyLDIwOC4zMmMuMDIsNC40MywyLjQ5LDYuMTQsNS4zNiw2LjE0LDIuMDMsMCwzLjE1LS4zOSw0LjA0LS44bC40MSwxLjQzYy0uNzEuMzYtMi4yNy45NC00LjcuOTQtNC4zNCwwLTYuOTctMy4wOS02Ljk3LTcuNTEsMC00LjgxLDIuNzMtOC4wNyw2LjY5LTguMDcsNC43NywwLDUuODEsNC40Miw1LjgxLDYuODIsMCwuNDctLjAxLjc3LS4wNiwxLjA1aC0xMC41OFpNNTczLjIzLDIwNi44NmMuMDQtMi4wNC0uODItNC45My00LjA5LTQuOTMtMy4wMSwwLTQuMzIsMi43Ny00LjU2LDQuOTNoOC42NloiLz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik01NzguNzUsMjA0LjUyYzAtMS40Ni0uMDUtMi41NC0uMTItMy43M2gxLjczbC4xMiwyLjU2aC4wN2MuNzctMS41NiwyLjU2LTIuOSw0Ljk2LTIuOSwxLjY2LDAsNS4xMi45Myw1LjEyLDYuMjV2OS4wMWgtMS45MXYtOC44YzAtMi41Ny0uOTYtNC44Ni0zLjc5LTQuODYtMS45MywwLTMuNTQsMS4zOS00LjA4LDMuMTgtLjExLjM1LS4xOS44NC0uMTksMS4zdjkuMTdoLTEuOTF2LTExLjJaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0zIiBkPSJNNjA1LjQ3LDIxNS4xMmMtLjY2LjM0LTIuMTguOTEtNC4yMi45MS00LjI5LDAtNy4xNC0zLjA4LTcuMTQtNy42MnMzLjEyLTcuOTYsNy42Ny03Ljk2YzEuNjksMCwzLjEzLjQ2LDMuNzYuODZsLS41NSwxLjUzYy0uNjgtLjM4LTEuNzUtLjc5LTMuMzEtLjc5LTMuNzEsMC01LjY0LDIuOS01LjY0LDYuMjUsMCwzLjc1LDIuMzIsNi4xNCw1LjUzLDYuMTQsMS42MiwwLDIuNy0uNDQsMy40OC0uNzlsLjQyLDEuNDdaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0zIiBkPSJNNjExLjEzLDE5Ni41NmMwLC43OC0uNTIsMS40My0xLjQxLDEuNDMtLjc4LDAtMS4zMS0uNjUtMS4zMS0xLjQzLDAtLjc3LjU4LTEuNDMsMS4zNy0xLjQzczEuMzUuNjMsMS4zNSwxLjQzWk02MDguODIsMjE1Ljcxdi0xNC45MmgxLjkxdjE0LjkyaC0xLjkxWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTYyMy41MSwyMTUuNzFsLS4yMi0yLjAyaC0uMDhjLS43NSwxLjE2LTIuMzUsMi4zNi00LjU4LDIuMzYtMi45NCwwLTQuMzktMi4wOS00LjM5LTQuMTcsMC0zLjUxLDMuMDgtNS41Myw4Ljg4LTUuNDh2LS4zOGMwLTEuNDQtLjMyLTQuMDctMy42LTQuMDUtMS4zLDAtMi42Ni4zNy0zLjcsMS4wOWwtLjUxLTEuMzNjMS4yNy0uODUsMi45Ni0xLjI3LDQuNDgtMS4yNyw0LjI4LDAsNS4yNCwzLjA5LDUuMjQsNS45MXY1LjhjMCwxLjIxLjA1LDIuNDUuMjIsMy41NGgtMS43NFpNNjIzLjE1LDIwNy44NmMtMy4wMi0uMDgtNi45My40MS02LjkzLDMuNzYsMCwyLjAyLDEuMzEsMi45MiwyLjc2LDIuOTIsMi4yMywwLDMuNTYtMS40LDQuMDMtMi44LjEtLjMxLjE0LS42Mi4xNC0uODh2LTNaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0zIiBkPSJNNjI5LjY1LDE5My43M2gxLjkxdjIxLjk4aC0xLjkxdi0yMS45OFoiLz4KICAgICAgPC9nPgogICAgPC9nPgogIDwvZz4KPC9zdmc+" alt="Logo RENOVE">
+          </div>
+        </a>
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center gap-8">
+          <a href="#servicos" class="text-sm font-medium text-renove-secondary hover:text-renove-accent transition-colors">Serviços</a>
+          <a href="#galeria" class="text-sm font-medium text-renove-secondary hover:text-renove-accent transition-colors">Galeria</a>
+          <a href="#processo" class="text-sm font-medium text-renove-secondary hover:text-renove-accent transition-colors">Processo</a>
+          <a href="#materiais" class="text-sm font-medium text-renove-secondary hover:text-renove-accent transition-colors">Materiais</a>
+          <a href="#depoimentos" class="text-sm font-medium text-renove-secondary hover:text-renove-accent transition-colors">Clientes</a>
+        </div>
+        <!-- CTA Button -->
+        <button class="btn-premium hidden sm:inline-flex items-center gap-2">
+          <span>Solicitar Orçamento</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </button>
+        <!-- Mobile Menu Button -->
+        <button class="lg:hidden p-2 text-renove-primary hidden">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <!-- Navigation Bar -->
+   
+  <!-- Hero Section -->
+  <section class="relative pt-24 pb-20 overflow-hidden">
+    <!-- Background -->
+    <div class="parallax-bg absolute inset-0 bg-gradient-to-br from-renove-mist via-white to-renove-pearl"></div>
+    <div class="absolute inset-0 grain opacity-30"></div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-element absolute top-20 left-10 w-32 h-32 bg-renove-accent/10 rounded-full blur-3xl"></div>
+    <div class="floating-element absolute bottom-40 right-16 w-48 h-48 bg-renove-copper/10 rounded-full blur-3xl" style="animation-delay: 2s;"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 mt-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Content -->
+        <div class="reveal">
+          <div class="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-renove-accent/10 text-renove-accent text-sm font-medium mb-6">
+            <span class="w-2 h-2 bg-renove-accent rounded-full animate-pulse"></span>
+            Transformação sem obras
+          </div>
+
+          <h1 class="hero-title text-5xl lg:text-6xl font-display font-semibold leading-tight mb-6">
+            <span class="text-renove-primary">Renove</span> sua casa com
+            <span class="bg-gradient-to-r from-renove-accent to-renove-copper bg-clip-text text-transparent">
+              elegância premium
+            </span>
+          </h1>
+
+          <p class="hero-subtitle text-xl text-renove-secondary leading-relaxed mb-8 max-w-xl">
+            Transformamos móveis, eletrodomésticos e superfícies com revestimentos de alta performance.
+            Resultado profissional, sem bagunça e com garantia total.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="hero-buttons flex flex-col sm:flex-row gap-4 mb-10">
+            <button class="btn-premium text-center">
+              Ver Transformações
+            </button>
+            <button class="px-8 py-4 border-2 border-renove-primary text-renove-primary font-semibold rounded-2xl hover:bg-renove-primary hover:text-white transition-all duration-300">
+              Como Funciona
+            </button>
+          </div>
+
+          <!-- Trust Indicators -->
+          <div class="hero-stats grid grid-cols-3 gap-6 pt-8 border-t border-renove-pearl">
+            <div class="text-center">
+              <div class="text-2xl font-bold text-renove-primary">+100</div>
+              <div class="text-sm text-renove-secondary">Projetos Realizados</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-renove-primary">72h</div>
+              <div class="text-sm text-renove-secondary">Instalação Média</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-renove-primary">5★</div>
+              <div class="text-sm text-renove-secondary">Avaliação Clientes</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image with Enhanced Before/After -->
+        <div class="hero-image reveal">
+          <div class="relative bg-white rounded-3xl overflow-hidden shadow-premium">
+            <!-- Modern Before/After Container -->
+            <div class="hero-ba-container relative h-[500px] md:h-[540px]" id="hero-comparison">
+              <!-- Before Image -->
+              <div class="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&amp;w=1600&amp;auto=format&amp;fit=crop" alt="Cozinha antes da renovação" class="w-full h-full object-cover">
+                <!-- Before Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
+              </div>
+              
+              <!-- After Image with Clip Path -->
+              <div class="hero-after-section absolute inset-0" style="clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&amp;w=1600&amp;auto=format&amp;fit=crop" alt="Cozinha após renovação premium" class="w-full h-full object-cover">
+                <!-- After Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-l from-renove-accent/10 to-transparent"></div>
+              </div>
+
+              <!-- Interactive Divider -->
+              <div class="hero-divider absolute top-0 bottom-0 w-1 bg-white shadow-2xl z-20" style="left: 50%;">
+                <div class="hero-handle absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-white rounded-full shadow-2xl flex items-center justify-center cursor-grab group hover:scale-110 transition-all duration-300">
+                  <!-- Handle Icon -->
+                  <div class="flex items-center gap-1">
+                    <svg class="w-3 h-6 text-renove-accent" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+                    </svg>
+                    <div class="w-1 h-8 bg-renove-accent rounded-full"></div>
+                    <svg class="w-3 h-6 text-renove-accent" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Enhanced Labels -->
+              <div class="absolute top-6 left-6 z-30">
+                <div class="bg-white/95 backdrop-blur-sm px-4 py-3 rounded-2xl shadow-elegant border border-white/20">
+                  <div class="flex items-center gap-3">
+                    <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                    <span class="text-sm font-semibold text-gray-700 uppercase tracking-wider">Antes</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="absolute top-6 right-6 z-30">
+                <div class="bg-renove-accent/95 backdrop-blur-sm px-4 py-3 rounded-2xl shadow-elegant border border-renove-copper/20">
+                  <div class="flex items-center gap-3">
+                    <div class="w-3 h-3 bg-white rounded-full"></div>
+                    <span class="text-sm font-semibold text-white uppercase tracking-wider">Depois</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive Instructions -->
+              <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30">
+                <div class="bg-white/95 backdrop-blur-sm px-6 py-3 rounded-full shadow-elegant border border-white/20 flex items-center gap-3">
+                  <div class="flex items-center gap-1">
+                    <div class="w-2 h-2 bg-renove-accent rounded-full animate-pulse"></div>
+                    <div class="w-2 h-2 bg-renove-accent/60 rounded-full animate-pulse" style="animation-delay: 0.2s;"></div>
+                    <div class="w-2 h-2 bg-renove-accent/30 rounded-full animate-pulse" style="animation-delay: 0.4s;"></div>
+                  </div>
+                  <span class="text-sm font-medium text-gray-700">Arraste para comparar</span>
+                  <svg class="w-5 h-5 text-renove-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path>
+                  </svg>
+                </div>
+              </div>
+
+            <!-- Progress Indicator -->
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gray-200 z-10">
+              <div class="hero-progress h-full bg-renove-accent transition-all duration-300" style="width: 50%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- Gallery Section -->
+  <section id="galeria" class="pt-20 bg-gradient-to-br from-slate-50 via-white to-slate-100 ">
+    <div class="max-w-7xl mx-auto px-6 hidden">
+      <div class="text-center reveal mb-16">
+        <h2 class="text-4xl md:text-5xl font-display font-semibold text-renove-primary mb-6">
+          Transformações <span class="bg-gradient-to-r from-renove-accent to-renove-copper bg-clip-text text-transparent">Impressionantes</span>
+        </h2>
+        <p class="text-lg text-renove-secondary max-w-3xl mx-auto">
+          Toque nos cards para revelar as transformações. Cada projeto é uma história única de renovação premium.
+        </p>
+      </div>
+
+      <!-- Gallery Container -->
+      <div class="max-w-6xl mx-auto">
+        <!-- Category Filters -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12 reveal">
+          <button class="filter-btn active" data-filter="all">
+            <span>Todos</span>
+          </button>
+          <button class="filter-btn" data-filter="cozinha">
+            <span>Cozinhas</span>
+          </button>
+          <button class="filter-btn" data-filter="sala">
+            <span>Salas</span>
+          </button>
+          <button class="filter-btn" data-filter="quarto">
+            <span>Quartos</span>
+          </button>
+          <button class="filter-btn" data-filter="banheiro">
+            <span>Banheiros</span>
+          </button>
+          <button class="filter-btn" data-filter="escritorio">
+            <span>Escritórios</span>
+          </button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 reveal">
+          
+          <!-- Projeto 1: Cozinha -->
+          <div class="gallery-item project-card" data-category="cozinha">
+            <div class="project-container">
+              <!-- Before/After Toggle -->
+              <img src="https://placehold.co/600x400" alt="">
+              <div class="project-info">
+                <div class="project-tags">
+                  <span class="tag">Móveis Planejados</span>
+                  <span class="tag">Eletrodomésticos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+
+          <!-- Projeto 6: Cozinha 2 -->
+           
+
+        </div>
+
+        <!-- CTA Section -->
+        <div class="text-center mt-16 reveal">
+          <div class="bg-gradient-to-r from-renove-primary via-renove-secondary to-renove-primary rounded-3xl p-8 md:p-12 text-white inline-block relative overflow-hidden max-w-4xl">
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+            <div class="relative z-10">
+              <h3 class="text-2xl md:text-3xl font-display font-semibold mb-4">Pronto para sua transformação?</h3>
+              <p class="text-renove-pearl/90 mb-6 md:mb-8 max-w-2xl mx-auto text-base md:text-lg">
+                Cada projeto é único e personalizado. Receba uma proposta exclusiva para realizar a renovação dos seus sonhos.
+              </p>
+              <button class="bg-renove-accent hover:bg-renove-copper text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl text-sm md:text-base">
+                Solicitar Meu Projeto Personalizado
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  <!-- Services Section -->
+  <section id="servicos" class="py-0">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Section Header -->
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl lg:text-5xl font-display font-semibold text-renove-primary mb-4">
+          Nossos <span class="text-renove-accent">Serviços Premium</span>
+        </h2>
+        <p class="text-xl text-renove-secondary max-w-3xl mx-auto">
+          Especializados em transformação de superfícies com materiais de alta performance
+          e técnicas profissionais que garantem resultado duradouro.
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        <!-- Service 1 -->
+        <div class="service-card reveal bg-white rounded-3xl p-8 shadow-elegant hover-lift group">
+          <div class="material-icon w-16 h-16 bg-gradient-to-br from-renove-accent to-renove-copper rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-display font-semibold text-renove-primary mb-4">Móveis Planejados</h3>
+          <p class="text-renove-secondary mb-6 leading-relaxed">
+            Renovação completa de cozinhas, quartos, banheiros e home offices.
+            Portas, gavetas, prateleiras e painéis com acabamento impecável.
+          </p>
+          <ul class="space-y-2 text-sm text-renove-secondary">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-renove-accent rounded-full"></span>
+              Armários de cozinha
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-renove-accent rounded-full"></span>
+              Guarda-roupas
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-renove-accent rounded-full"></span>
+              Estantes e painéis
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-renove-accent rounded-full"></span>
+              Bancadas e tampos
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card reveal bg-white rounded-3xl p-8 shadow-elegant hover-lift group">
+          <div class="material-icon w-16 h-16 bg-gradient-to-br from-renove-primary to-renove-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-display font-semibold text-renove-primary mb-4">Eletrodomésticos</h3>
+          <p class="text-renove-secondary mb-6 leading-relaxed">
+            Proteção e modernização de aparelhos com películas especiais
+            resistentes ao calor, umidade e uso contínuo.
+          </p>
+          <ul class="space-y-2 text-sm text-renove-secondary">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-renove-accent rounded-full"></span>
+              Geladeiras e freezers
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-renove-accent rounded-full"></span>
+              Micro-ondas e fornos
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-renove-accent rounded-full"></span>
+              Lava-louças
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-renove-accent rounded-full"></span>
+              Máquinas de lavar
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card reveal bg-white rounded-3xl p-8 shadow-elegant hover-lift group">
+          <div class="material-icon w-16 h-16 bg-gradient-to-br from-renove-copper to-renove-accent rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-display font-semibold text-renove-primary mb-4">Superfícies &amp; Portas</h3>
+          <p class="text-renove-secondary mb-6 leading-relaxed">
+            Revestimento de portas, paredes, divisórias e outras superfícies
+            lisas com texturas arquitetônicas sofisticadas.
+          </p>
+          <ul class="space-y-2 text-sm text-renove-secondary">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-renove-accent rounded-full"></span>
+              Portas internas
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-renove-accent rounded-full"></span>
+              Painéis decorativos
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-renove-accent rounded-full"></span>
+              Rodapés e molduras
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-renove-accent rounded-full"></span>
+              Divisórias
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Differential Section -->
+      <div class="reveal bg-gradient-to-r from-renove-mist to-renove-pearl rounded-3xl p-8 lg:p-12">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 class="text-3xl font-display font-semibold text-renove-primary mb-6">
+              Por que escolher a <span class="text-renove-accent">RENOVE</span>?
+            </h3>
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-renove-accent rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-renove-primary mb-1">Garantia Total</h4>
+                  <p class="text-sm text-renove-secondary">2 anos contra descolamento e defeitos</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-renove-accent rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-renove-primary mb-1">Execução Rápida</h4>
+                  <p class="text-sm text-renove-secondary">Maioria dos projetos em 3 dias</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-renove-accent rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-renove-primary mb-1">Materiais Premium</h4>
+                  <p class="text-sm text-renove-secondary">Nacional com certificação</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-renove-accent rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-renove-primary mb-1">Processo Limpo</h4>
+                  <p class="text-sm text-renove-secondary">Sem poeira, odor ou bagunça</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Profissional aplicando revestimento" class="rounded-2xl shadow-premium w-full">
+            <div class="absolute -top-4 -right-4 bg-renove-accent text-white px-4 py-2 rounded-xl font-semibold shadow-soft">
+              +100 projetos
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section id="processo" class="py-20 bg-gradient-to-b from-white to-renove-mist">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Section Header -->
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl lg:text-5xl font-display font-semibold text-renove-primary mb-4">
+          Nosso <span class="text-renove-accent">Processo</span> Exclusivo
+        </h2>
+        <p class="text-xl text-renove-secondary max-w-3xl mx-auto">
+          Metodologia testada e aprovada em centenas de projetos.
+          Cada etapa é cuidadosamente planejada para garantir o resultado perfeito.
+        </p>
+      </div>
+
+      <!-- Process Steps -->
+      <div class="relative">
+        <!-- Connection Line -->
+        <div class="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-renove-accent via-renove-copper to-renove-accent transform -translate-y-1/2 z-0">
+        </div>
+
+        <div class="grid lg:grid-cols-4 gap-8 relative z-10">
+          <!-- Step 1 -->
+          <div class="process-step reveal text-center group">
+            <div class="relative mb-6">
+              <div class="step-number w-20 h-20 bg-gradient-to-br from-renove-accent to-renove-copper rounded-full flex items-center justify-center mx-auto shadow-premium group-hover:scale-110 transition-transform">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+              </div>
+              <div class="absolute -top-2 -right-2 w-8 h-8 bg-renove-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
+                1</div>
+            </div>
+            <div class="step-content">
+              <h3 class="text-xl font-display font-semibold text-renove-primary mb-3">Consulta &amp; Planejamento</h3>
+              <p class="text-renove-secondary leading-relaxed pt-4">
+                Visita técnica gratuita, análise do ambiente e definição
+                de materiais, cores e cronograma personalizado.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-step reveal text-center group">
+            <div class="relative mb-6">
+              <div class="step-number w-20 h-20 bg-gradient-to-br from-renove-primary to-renove-secondary rounded-full flex items-center justify-center mx-auto shadow-premium group-hover:scale-110 transition-transform">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
+                </svg>
+              </div>
+              <div class="absolute -top-2 -right-2 w-8 h-8 bg-renove-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
+                2</div>
+            </div>
+            <h3 class="text-xl font-display font-semibold text-renove-primary mb-3">Seleção de Materiais</h3>
+            <p class="text-renove-secondary leading-relaxed pt-4">
+              Apresentação do catálogo premium com amostras físicas.
+              Simulação digital do resultado final no seu ambiente.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="reveal text-center group">
+            <div class="relative mb-6">
+              <div class="w-20 h-20 bg-gradient-to-br from-renove-copper to-renove-accent rounded-full flex items-center justify-center mx-auto shadow-premium group-hover:scale-110 transition-transform">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <div class="absolute -top-2 -right-2 w-8 h-8 bg-renove-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
+                3</div>
+            </div>
+            <h3 class="text-xl font-display font-semibold text-renove-primary mb-3">Aplicação Profissional</h3>
+            <p class="text-renove-secondary leading-relaxed pt-4">
+              Preparação das superfícies, aplicação com ferramentas
+              profissionais e técnicas que garantem aderência perfeita.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="reveal text-center group">
+            <div class="relative mb-6">
+              <div class="w-20 h-20 bg-gradient-to-br from-renove-secondary to-renove-primary rounded-full flex items-center justify-center mx-auto shadow-premium group-hover:scale-110 transition-transform">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+              </div>
+              <div class="absolute -top-2 -right-2 w-8 h-8 bg-renove-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
+                4</div>
+            </div>
+            <h3 class="text-xl font-display font-semibold text-renove-primary mb-3">Entrega &amp; Garantia</h3>
+            <p class="text-renove-secondary leading-relaxed pt-4">
+              Inspeção final rigorosa, orientações de cuidado e
+              ativação da garantia de 2 anos contra defeitos.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline CTA -->
+      <div class="mt-16 text-center reveal">
+        <div class="inline-flex items-center gap-4 bg-white rounded-2xl p-6 shadow-elegant">
+          <div class="w-12 h-12 bg-renove-accent rounded-full flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <div class="text-left">
+            <div class="font-display font-semibold text-renove-primary">Prazo médio: 1 a 5 dias</div>
+            <div class="text-sm text-renove-secondary">Da consulta à entrega finalizada</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Materials Section -->
+  <section id="materiais" class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Section Header -->
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl lg:text-5xl font-display font-semibold text-renove-primary mb-4">
+          Materiais <span class="text-renove-accent">Premium Nacional</span>
+        </h2>
+        <p class="text-xl text-renove-secondary max-w-3xl mx-auto">
+          Trabalhamos exclusivamente com películas arquitetônicas certificadas,
+          resistentes e com texturas hiper-realistas que simulam materiais naturais.
+        </p>
+      </div>
+
+      <!-- Materials Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <!-- Material 1 -->
+        <div class="reveal bg-white rounded-3xl p-6 shadow-elegant hover-lift group">
+          <div class="h-32 bg-gradient-to-br from-amber-800 via-amber-700 to-amber-900 rounded-2xl mb-4 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgMEg0MFY0MEgwVjBaIiBmaWxsPSIjNDQ0IiBmaWxsLW9wYWNpdHk9IjAuMSIvPgo8L3N2Zz4K')] opacity-30">
+            </div>
+          </div>
+          <h3 class="font-display font-semibold text-renove-primary mb-2">Madeiras Nobres</h3>
+          <p class="text-sm text-renove-secondary mb-3">Texturas naturais com veios realistas</p>
+          <ul class="text-xs text-renove-secondary space-y-1">
+            <li>• Nogueira Americana</li>
+            <li>• Carvalho Europeu</li>
+            <li>• Ébano Premium</li>
+            <li>• Freijó Moderno</li>
+          </ul>
+        </div>
+
+        <!-- Material 2 -->
+        <div class="reveal bg-white rounded-3xl p-6 shadow-elegant hover-lift group">
+          <div class="h-32 bg-gradient-to-br from-slate-200 via-slate-100 to-white rounded-2xl mb-4 relative overflow-hidden border">
+            <div class="absolute inset-0 bg-gradient-to-br from-transparent to-slate-100/50"></div>
+          </div>
+          <h3 class="font-display font-semibold text-renove-primary mb-2">Cores Sólidas</h3>
+          <p class="text-sm text-renove-secondary mb-3">Acabamento acetinado premium</p>
+          <ul class="text-xs text-renove-secondary space-y-1">
+            <li>• Branco Absoluto</li>
+            <li>• Off-White Elegante</li>
+            <li>• Grafite Moderno</li>
+            <li>• Sage Premium</li>
+          </ul>
+        </div>
+
+        <!-- Material 3 -->
+        <div class="reveal bg-white rounded-3xl p-6 shadow-elegant hover-lift group">
+          <div class="h-32 bg-gradient-to-br from-yellow-600 via-yellow-500 to-amber-400 rounded-2xl mb-4 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-white/40"></div>
+          </div>
+          <h3 class="font-display font-semibold text-renove-primary mb-2">Metalizados</h3>
+          <p class="text-sm text-renove-secondary mb-3">Reflexos naturais e elegantes</p>
+          <ul class="text-xs text-renove-secondary space-y-1">
+            <li>• Dourado Champagne</li>
+            <li>• Aço Escovado</li>
+            <li>• Cobre Rosé</li>
+            <li>• Platina Fosca</li>
+          </ul>
+        </div>
+
+        <!-- Material 4 -->
+        <div class="reveal bg-white rounded-3xl p-6 shadow-elegant hover-lift group">
+          <div class="h-32 bg-gradient-to-br from-gray-400 via-gray-300 to-gray-200 rounded-2xl mb-4 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4yIi8+Cjwvc3ZnPgo=')] opacity-50">
+            </div>
+          </div>
+          <h3 class="font-display font-semibold text-renove-primary mb-2">Texturas Especiais</h3>
+          <p class="text-sm text-renove-secondary mb-3">Efeitos arquitetônicos únicos</p>
+          <ul class="text-xs text-renove-secondary space-y-1">
+            <li>• Cimento Queimado</li>
+            <li>• Mármore Carrara</li>
+            <li>• Linho Natural</li>
+            <li>• Couro Premium</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Materials Info -->
+      <div class="reveal bg-gradient-to-r from-renove-primary to-renove-secondary rounded-3xl p-8 lg:p-12 text-white">
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+    
+    <!-- Qualidade Garantida -->
+    <div>
+      <h3 class="text-2xl font-display font-semibold mb-4">Qualidade Garantida</h3>
+      <ul class="space-y-3">
+        <li class="flex items-center gap-3">
+          <svg class="w-5 h-5 text-renove-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <span>Resistência comprovada em aplicações externas</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <svg class="w-5 h-5 text-renove-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <span>Não propaga chamas</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <svg class="w-5 h-5 text-renove-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <span>Livres de metais pesados, seguros para ambientes internos</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Certificações -->
+    
+
+    <!-- Durabilidade -->
+    <div>
+      <h3 class="text-2xl font-display font-semibold mb-4 text-center">Durabilidade</h3>
+      <div class="text-center">
+        <div class="text-4xl font-bold text-renove-accent mb-2">8+</div>
+        <div class="text-sm opacity-90">anos em ambientes internos</div>
+        <div class="text-xs mt-2 opacity-80">até 5 anos em externos</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    </div>
+  </section>
+
+  <!-- Depoimentos Section -->
+  <section id="depoimentos" class="pt-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Section Header -->
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl lg:text-5xl font-display font-semibold text-renove-primary mb-4">
+          O que nossos <span class="text-renove-accent">clientes dizem</span>
+        </h2>
+        <p class="text-xl text-renove-secondary max-w-3xl mx-auto">Envelopamento residencial que renova móveis, ambientes e histórias em família.</p>
+      </div>
+
+      <!-- Testimonials Grid -->
+      <div class="reveal bg-white rounded-3xl p-10 shadow-elegant text-center mb-16 max-w-3xl mx-auto"><p class="text-xl text-renove-secondary mb-6">Veja o que os clientes da RENOVE dizem nas avaliações do Google.</p><a href="https://www.google.com/maps/search/Renove-Cwb+Envelopamento+Curitiba" target="_blank" rel="noopener" class="inline-block bg-renove-accent text-white font-semibold px-8 py-4 rounded-full hover-lift">Ver avaliações no Google</a></div>
+
+      <!-- Trust Stats -->
+      <div class="reveal">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 bg-white rounded-3xl p-8 shadow-elegant">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-renove-accent mb-2">98%</div>
+            <div class="text-sm text-renove-secondary">Satisfação dos clientes</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-renove-accent mb-2">100+</div>
+            <div class="text-sm text-renove-secondary">Projetos realizados</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-renove-accent mb-2">5.0★</div>
+            <div class="text-sm text-renove-secondary">Avaliação média</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-renove-accent mb-2">2 Anos</div>
+            <div class="text-sm text-renove-secondary">Garantia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20">
+    <div class="max-w-4xl mx-auto px-6">
+      <!-- Section Header -->
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl lg:text-5xl font-display font-semibold text-renove-primary mb-4">
+          Dúvidas <span class="text-renove-accent">Frequentes</span>
+        </h2>
+        <p class="text-xl text-renove-secondary">
+          Esclarecemos as principais questões sobre nosso serviço e materiais
+        </p>
+      </div>
+
+      <!-- FAQ Items -->
+      <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <details class="reveal group bg-white rounded-2xl shadow-soft overflow-hidden">
+          <summary class="p-6 cursor-pointer flex items-center justify-between hover:bg-renove-mist/50 transition-colors">
+            <h3 class="font-semibold text-lg text-renove-primary">O revestimento danifica os móveis originais?</h3>
+            <div class="w-8 h-8 bg-renove-accent/10 rounded-full flex items-center justify-center group-open:rotate-45 transition-transform">
+              <svg class="w-4 h-4 text-renove-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              </svg>
+            </div>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="text-renove-secondary leading-relaxed pt-4">
+              Absolutamente não. Nossos adesivos são desenvolvidos com cola removível que não deixa resíduos.
+              Na verdade, o revestimento protege a superfície original contra riscos, manchas e desgaste natural.
+              Quando removido corretamente, o móvel volta ao estado original.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="reveal group bg-white rounded-2xl shadow-soft overflow-hidden">
+          <summary class="p-6 cursor-pointer flex items-center justify-between hover:bg-renove-mist/50 transition-colors">
+            <h3 class="font-semibold text-lg text-renove-primary">Quanto tempo dura o revestimento?</h3>
+            <div class="w-8 h-8 bg-renove-accent/10 rounded-full flex items-center justify-center group-open:rotate-45 transition-transform">
+              <svg class="w-4 h-4 text-renove-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              </svg>
+            </div>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="text-renove-secondary leading-relaxed pt-4">
+              Com uso residencial normal, nossos materiais premium têm vida útil de 8+ anos.
+              Eles são resistentes a UV, calor, umidade e limpeza frequente. Oferecemos garantia
+              de 2 anos contra descolamento e defeitos de fabricação.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="reveal group bg-white rounded-2xl shadow-soft overflow-hidden">
+          <summary class="p-6 cursor-pointer flex items-center justify-between hover:bg-renove-mist/50 transition-colors">
+            <h3 class="font-semibold text-lg text-renove-primary">Como é feita a limpeza e manutenção?</h3>
+            <div class="w-8 h-8 bg-renove-accent/10 rounded-full flex items-center justify-center group-open:rotate-45 transition-transform">
+              <svg class="w-4 h-4 text-renove-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              </svg>
+            </div>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="text-renove-secondary leading-relaxed pt-4">
+              A manutenção é muito simples: pano úmido com detergente neutro.
+              Pode usar produtos de limpeza comuns, evitando apenas abrasivos e álcool em gel.
+              As superfícies são antiestáticas, acumulando menos poeira que madeira natural.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="reveal group bg-white rounded-2xl shadow-soft overflow-hidden">
+          <summary class="p-6 cursor-pointer flex items-center justify-between hover:bg-renove-mist/50 transition-colors">
+            <h3 class="font-semibold text-lg text-renove-primary">Qual o prazo para conclusão do projeto?</h3>
+            <div class="w-8 h-8 bg-renove-accent/10 rounded-full flex items-center justify-center group-open:rotate-45 transition-transform">
+              <svg class="w-4 h-4 text-renove-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              </svg>
+            </div>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="text-renove-secondary leading-relaxed pt-4">
+              A maioria dos projetos residenciais é concluída em poucos dias, geralmente entre 3 a 5 dias úteis, dependendo do porte e das características do ambiente. Cozinhas grandes podem levar até uma semana. Já projetos mais complexos, que envolvem múltiplos ambientes, são planejados em etapas para reduzir o impacto na rotina da família.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 5 -->
+        <details class="reveal group bg-white rounded-2xl shadow-soft overflow-hidden">
+          <summary class="p-6 cursor-pointer flex items-center justify-between hover:bg-renove-mist/50 transition-colors">
+            <h3 class="font-semibold text-lg text-renove-primary">Vocês trabalham com que tipos de superfície?</h3>
+            <div class="w-8 h-8 bg-renove-accent/10 rounded-full flex items-center justify-center group-open:rotate-45 transition-transform">
+              <svg class="w-4 h-4 text-renove-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              </svg>
+            </div>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="text-renove-secondary leading-relaxed pt-4">
+              Aplicamos em superfícies lisas e regulares: MDF, MDP, madeira, metal, vidro e algumas cerâmicas.
+              Não recomendamos para superfícies muito texturizadas, porosas ou com relevo acentuado.
+              Fazemos sempre uma avaliação técnica prévia.
+            </p>
+          </div>
+        </details>
+
+        <!-- FAQ 6 -->
+        <details class="reveal group bg-white rounded-2xl shadow-soft overflow-hidden">
+          <summary class="p-6 cursor-pointer flex items-center justify-between hover:bg-renove-mist/50 transition-colors">
+            <h3 class="font-semibold text-lg text-renove-primary">Como funciona o orçamento e pagamento?</h3>
+            <div class="w-8 h-8 bg-renove-accent/10 rounded-full flex items-center justify-center group-open:rotate-45 transition-transform">
+              <svg class="w-4 h-4 text-renove-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              </svg>
+            </div>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="text-renove-secondary leading-relaxed pt-4">
+              O orçamento é gratuito e realizado sempre por meio de visita técnica.
+Trabalhamos com valores fixos por m² aplicado, sem custos ocultos.
+O agendamento é confirmado mediante entrada de 50% do valor total.
+O saldo pode ser pago na conclusão, com opções de pagamento via PIX, transferência bancária ou cartão de crédito (em até 12x, com encargos da operadora).
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+  <!-- Depoimentos -->
+
+   <!-- Modern Contact CTA Section -->
+  <section id="contato" class="py-24 bg-gradient-to-br from-renove-primary via-renove-secondary to-slate-900 relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,white_0.5px,transparent_0.5px)] bg-[length:24px_24px]"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-6 relative">
+      <div class="text-center mb-16 reveal">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-renove-accent/20 text-renove-accent text-sm font-medium mb-6">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          <span>Consultoria Gratuita</span>
+        </div>
+        
+        <h2 class="text-4xl lg:text-6xl font-display font-bold text-white mb-6">
+          Transforme sua <span class="bg-gradient-to-r from-renove-accent to-renove-copper bg-clip-text text-transparent">casa hoje</span>
+        </h2>
+        
+        <p class="text-xl text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+          Receba uma proposta personalizada em até 24h. Enviamos sugestões de cores, texturas e orçamento detalhado sem compromisso.
+        </p>
+      </div>
+
+      <!-- CTA Cards -->
+       
+
+      <!-- Benefits Bar -->
+     
+
+      <!-- Disclaimer -->
+      <p class="text-center text-slate-400 text-sm mt-8 reveal">
+        *Orçamentos personalizados • Sem valores predefinidos • Cada projeto é único
+      </p>
+    </div>
+  </section>
+
+  <!-- Modern Footer -->
+  <footer class="bg-gradient-to-br from-slate-900 via-slate-800 to-renove-primary relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,white_1px,transparent_1px)] bg-[length:32px_32px]"></div>
+    </div>
+    
+    <!-- Main Footer Content -->
+    <div class="max-w-7xl mx-auto px-6 py-16 relative">
+      <div class="grid lg:grid-cols-5 gap-12">
+        
+        <!-- Brand Section -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-100">
+              <img width="210" src="data:image/webp;base64,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" alt="">
+            </div>
+          </div>
+          
+          <p class="text-slate-300 mb-8 leading-relaxed max-w-md">
+            Transformamos sua casa com envelopamento residencial premium. Qualidade profissional, resultado garantido e atendimento personalizado.
+          </p>
+          
+          <!-- Stats Grid -->
+          <div class="grid grid-cols-3 gap-6 mb-8">
+            <div class="text-center">
+              <div class="text-2xl font-display font-bold text-renove-accent">100+</div>
+              <div class="text-xs text-slate-400">Projetos</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-display font-bold text-renove-accent">5★</div>
+              <div class="text-xs text-slate-400">Avaliação</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-display font-bold text-renove-accent">2 Anos</div>
+              <div class="text-xs text-slate-400">Garantia</div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 bg-white/10 hover:bg-renove-accent/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 group">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="text-slate-400 group-hover:text-renove-accent">
+                <path d="M12.051 3.999a9.053 9.053 0 11-9.53 9.53A9.053 9.053 0 0112.051 3.999m0-1.8a10.853 10.853 0 1010.853 10.853A10.853 10.853 0 0012.051 2.199z"></path>
+                <path d="M15.578 8.42a.72.72 0 11-.72-.72.72.72 0 01.72.72zM12.05 7.278a4.772 4.772 0 104.772 4.772 4.772 4.772 0 00-4.772-4.772zm0 7.744a2.972 2.972 0 112.972-2.972 2.972 2.972 0 01-2.972 2.972z"></path>
+              </svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/10 hover:bg-renove-accent/20 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 group">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="text-slate-400 group-hover:text-renove-accent">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Services -->
+        <div>
+          <h3 class="text-lg font-display font-semibold text-white mb-6">Serviços</h3>
+          <ul class="space-y-4">
+            <li><a href="#servicos" class="text-slate-300 hover:text-renove-accent transition-colors flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-renove-accent rounded-full"></span>
+              Móveis Planejados
+            </a></li>
+            <li><a href="#servicos" class="text-slate-300 hover:text-renove-accent transition-colors flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-renove-accent rounded-full"></span>
+              Eletrodomésticos
+            </a></li>
+            <li><a href="#servicos" class="text-slate-300 hover:text-renove-accent transition-colors flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-renove-accent rounded-full"></span>
+              Superfícies &amp; Portas
+            </a></li>
+            <li><a href="#materiais" class="text-slate-300 hover:text-renove-accent transition-colors flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-renove-accent rounded-full"></span>
+              Acabamentos Premium
+            </a></li>
+          </ul>
+        </div>
+        
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-display font-semibold text-white mb-6">Links Rápidos</h3>
+          <ul class="space-y-4">
+            <li><a href="#galeria" class="text-slate-300 hover:text-renove-accent transition-colors flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-renove-accent rounded-full"></span>
+              Galeria de Projetos
+            </a></li>
+            <li><a href="#processo" class="text-slate-300 hover:text-renove-accent transition-colors flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-renove-accent rounded-full"></span>
+              Como Funciona
+            </a></li>
+            <li><a href="#depoimentos" class="text-slate-300 hover:text-renove-accent transition-colors flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-renove-accent rounded-full"></span>
+              Depoimentos
+            </a></li>
+            <li><a href="#contato" class="text-slate-300 hover:text-renove-accent transition-colors flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-renove-accent rounded-full"></span>
+              Solicitar Orçamento
+            </a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-lg font-display font-semibold text-white mb-6">Contato</h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-renove-accent/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-renove-accent">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <div class="text-slate-300 text-sm">Curitiba, PR</div>
+                <div class="text-slate-400 text-xs">Atendemos toda Curitiba e região metropolitana</div>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-renove-accent/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-renove-accent">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div>
+                <a href="tel:+5541995025112" class="text-slate-300 hover:text-renove-accent transition-colors text-sm">
+                  (41) 9.9502-5112
+                </a>
+                <div class="text-slate-400 text-xs">Segunda a Sexta, 8h às 18h</div>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-3 hidden">
+              <div class="w-8 h-8 bg-renove-accent/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-renove-accent">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="hidden">
+                <a href="mailto:contato@renove.com" class="text-slate-300 hover:text-renove-accent transition-colors text-sm">
+                  contato@renove.com
+                </a>
+                <div class="text-slate-400 text-xs">Resposta em até 24h</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-6 py-6">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div class="text-slate-400 text-sm">
+            © <span id="year"></span> RENOVE. Todos os direitos reservados.
+          </div>
+          <div class="flex items-center gap-6 text-xs text-slate-500 hidden">
+            <a href="#" class="hover:text-renove-accent transition-colors">Política de Privacidade</a>
+            <a href="#" class="hover:text-renove-accent transition-colors">Termos de Uso</a>
+            <a href="#" class="hover:text-renove-accent transition-colors">Garantia</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Floater WhatsApp -->
+        <a href="https://wa.me/5541995025112?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20envelopamento%20residencial." target="_blank" style="position: fixed; 
+                  bottom: 35px; 
+                  right: 20px; 
+                  background: #25D366; 
+                  color: #fff; 
+                  font-size: 16px; 
+                  font-weight: bold; 
+                  padding: 14px 18px; 
+                  border-radius: 50px; 
+                  box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+                  text-decoration: none; 
+                  display: flex; 
+                  align-items: center; 
+                  gap: 8px; 
+                  z-index: 9999; 
+                  transition: transform 0.3s ease;">
+           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+             <path d="M12 0C5.373 0 0 5.373 0 12c0 2.114.547 4.167 1.587 5.986L0 24l6.223-1.635C8.186 23.428 10.073 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm.002 21.429c-1.693 0-3.351-.455-4.788-1.314l-.342-.202-3.694.97.986-3.601-.223-.371C3.38 15.314 2.857 13.679 2.857 12 2.857 6.993 6.993 2.857 12 2.857c5.006 0 9.143 4.136 9.143 9.143s-4.137 9.429-9.141 9.429zm5.401-7.07c-.295-.147-1.74-.857-2.011-.953-.27-.099-.467-.147-.664.148-.197.296-.762.953-.934 1.15-.172.198-.345.222-.64.074-.295-.147-1.248-.46-2.377-1.468-.879-.784-1.474-1.752-1.646-2.047-.172-.296-.018-.456.13-.603.134-.133.296-.345.444-.517.147-.172.197-.296.295-.494.099-.197.049-.37-.025-.517-.074-.147-.664-1.6-.91-2.191-.24-.576-.483-.498-.664-.508-.172-.008-.37-.01-.568-.01-.197 0-.518.074-.789.37s-1.036 1.012-1.036 2.467 1.061 2.865 1.21 3.064c.147.197 2.09 3.192 5.064 4.478.708.305 1.26.487 1.691.623.711.227 1.358.195 1.871.118.571-.085 1.74-.71 1.985-1.395.245-.685.245-1.27.172-1.395-.073-.125-.27-.197-.566-.345z"></path>
+           </svg>
+           Fale conosco
+        </a>
+
+  </footer>
+  
+  <!-- Scripts -->
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // GSAP Scroll Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero animations on load
+    gsap.timeline()
+      .from(".hero-badge", { duration: 0.8, y: 30, opacity: 0, ease: "power2.out" })
+      .from(".hero-title", { duration: 1, y: 50, opacity: 0, ease: "power2.out" }, "-=0.6")
+      .from(".hero-subtitle", { duration: 0.8, y: 30, opacity: 0, ease: "power2.out" }, "-=0.4")
+      .from(".hero-buttons", { duration: 0.8, y: 30, opacity: 0, ease: "power2.out" }, "-=0.3")
+      .from(".hero-stats", { duration: 0.8, y: 30, opacity: 0, ease: "power2.out" }, "-=0.2")
+      .from(".hero-image", { duration: 1.2, scale: 0.9, opacity: 0, ease: "power2.out" }, "-=0.8");
+
+    // Reveal elements on scroll
+    gsap.utils.toArray('.reveal').forEach((element) => {
+      gsap.fromTo(element, {
+        y: 60,
+        opacity: 0
+      }, {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: element,
+          start: "top 85%",
+          end: "bottom 15%",
+          toggleActions: "play none none reverse"
+        }
+      });
+    });
+
+    // Service cards animation
+    gsap.utils.toArray('.service-card').forEach((card, index) => {
+      gsap.fromTo(card, {
+        y: 80,
+        opacity: 0,
+        scale: 0.9
+      }, {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 0.8,
+        ease: "power2.out",
+        delay: index * 0.1,
+        scrollTrigger: {
+          trigger: card,
+          start: "top 85%",
+          toggleActions: "play none none reverse"
+        }
+      });
+    });
+
+    // Gallery items stagger animation
+    gsap.utils.toArray('.gallery-item').forEach((item, index) => {
+      gsap.fromTo(item, {
+        y: 100,
+        opacity: 0,
+        scale: 0.8
+      }, {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        ease: "power2.out",
+        delay: index * 0.15,
+        scrollTrigger: {
+          trigger: item,
+          start: "top 90%",
+          toggleActions: "play none none reverse"
+        }
+      });
+    });
+
+    // Process steps animation
+    gsap.utils.toArray('.process-step').forEach((step, index) => {
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: step,
+          start: "top 80%",
+          toggleActions: "play none none reverse"
+        }
+      })
+      .fromTo(step.querySelector('.step-number'), {
+        scale: 0,
+        rotation: -180
+      }, {
+        scale: 1,
+        rotation: 0,
+        duration: 0.6,
+        ease: "back.out(1.7)"
+      })
+      .fromTo(step.querySelector('.step-content'), {
+        x: -50,
+        opacity: 0
+      }, {
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out"
+      }, "-=0.3");
+    });
+
+    // Material cards hover effect enhancement
+    gsap.utils.toArray('.material-card').forEach((card) => {
+      card.addEventListener('mouseenter', () => {
+        gsap.to(card, { scale: 1.05, duration: 0.3, ease: "power2.out" });
+        gsap.to(card.querySelector('.material-icon'), { rotation: 10, duration: 0.3 });
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, { scale: 1, duration: 0.3, ease: "power2.out" });
+        gsap.to(card.querySelector('.material-icon'), { rotation: 0, duration: 0.3 });
+      });
+    });
+
+    // Testimonial cards stagger
+    gsap.utils.toArray('.testimonial-card').forEach((card, index) => {
+      gsap.fromTo(card, {
+        y: 60,
+        opacity: 0,
+        rotationY: 20
+      }, {
+        y: 0,
+        opacity: 1,
+        rotationY: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        delay: index * 0.2,
+        scrollTrigger: {
+          trigger: card,
+          start: "top 85%",
+          toggleActions: "play none none reverse"
+        }
+      });
+    });
+
+    // Stats counter animation
+    gsap.utils.toArray('.stat-number').forEach((stat) => {
+      const finalValue = stat.textContent;
+      const numericValue = parseInt(finalValue.replace(/\D/g, ''));
+      
+      gsap.fromTo(stat, {
+        textContent: 0
+      }, {
+        textContent: numericValue,
+        duration: 2,
+        ease: "power2.out",
+        snap: { textContent: 1 },
+        scrollTrigger: {
+          trigger: stat,
+          start: "top 85%",
+          toggleActions: "play none none reverse"
+        },
+        onUpdate: function() {
+          if (finalValue.includes('+')) {
+            stat.textContent = Math.round(this.targets()[0].textContent) + '+';
+          } else if (finalValue.includes('★')) {
+            stat.textContent = (this.targets()[0].textContent / 10).toFixed(1) + '★';
+          } else if (finalValue.includes('Anos')) {
+            stat.textContent = Math.round(this.targets()[0].textContent) + ' Anos';
+          } else if (finalValue.includes('%')) {
+            stat.textContent = Math.round(this.targets()[0].textContent) + '%';
+          } else {
+            stat.textContent = Math.round(this.targets()[0].textContent);
+          }
+        }
+      });
+    });
+
+    // Navbar hide/show on scroll
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('nav');
+    
+    gsap.set(navbar, { y: 0 });
+    
+    ScrollTrigger.create({
+      start: "top top",
+      end: "max",
+      onUpdate: (self) => {
+        const currentScrollTop = self.scroll();
+        
+        if (currentScrollTop > lastScrollTop && currentScrollTop > 100) {
+          // Scrolling down
+          gsap.to(navbar, { y: -100, duration: 0.3, ease: "power2.out" });
+        } else {
+          // Scrolling up
+          gsap.to(navbar, { y: 0, duration: 0.3, ease: "power2.out" });
+        }
+        
+        lastScrollTop = currentScrollTop;
+      }
+    });
+
+    // Floating elements animation
+    gsap.utils.toArray('.floating-element').forEach((element, index) => {
+      gsap.to(element, {
+        y: "random(-20, 20)",
+        x: "random(-10, 10)",
+        rotation: "random(-5, 5)",
+        duration: "random(3, 5)",
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+        delay: index * 0.5
+      });
+    });
+
+    // Parallax effect for backgrounds
+    gsap.utils.toArray('.parallax-bg').forEach((bg) => {
+      gsap.to(bg, {
+        yPercent: -50,
+        ease: "none",
+        scrollTrigger: {
+          trigger: bg,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+    });
+
+    // Text reveal animation
+    gsap.utils.toArray('.text-reveal').forEach((text) => {
+      gsap.fromTo(text, {
+        y: 100,
+        opacity: 0
+      }, {
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: text,
+          start: "top 90%",
+          toggleActions: "play none none reverse"
+        }
+      });
+    });
+
+    // Button hover animations
+    gsap.utils.toArray('.btn-premium, .btn-secondary').forEach((btn) => {
+      btn.addEventListener('mouseenter', () => {
+        gsap.to(btn, { scale: 1.05, duration: 0.3, ease: "power2.out" });
+      });
+      
+      btn.addEventListener('mouseleave', () => {
+        gsap.to(btn, { scale: 1, duration: 0.3, ease: "power2.out" });
+      });
+    });
+  </script>
+  
+  <!-- Swiper JS -->
+  
+  <script>// main.js - RENOVE JavaScript functionality
+
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('DOM loaded, initializing...');
+
+    // Initialize components one by one with error handling
+    try {
+        setupHeroBeforeAfter();
+        console.log('Hero Before/After setup complete');
+    } catch (error) {
+        console.error('Error in setupHeroBeforeAfter:', error);
+    }
+
+    // Gallery before/after will be initialized by Swiper
+    console.log('Gallery Before/After will be initialized with Swiper');
+
+    try {
+        setupGalleryFilter();
+        console.log('Gallery filter setup complete');
+    } catch (error) {
+        console.error('Error in setupGalleryFilter:', error);
+    }
+
+    try {
+        setupNewGallery();
+        console.log('New gallery setup complete');
+    } catch (error) {
+        console.error('Error in setupNewGallery:', error);
+    }
+
+    // Initialize Swiper after a delay
+    setTimeout(() => {
+        try {
+            setupGallerySwiper();
+            console.log('Swiper setup complete');
+        } catch (error) {
+            console.error('Error in setupGallerySwiper:', error);
+        }
+    }, 500);
+});
+
+// Enhanced Hero Before/After functionality
+function setupHeroBeforeAfter() {
+    const container = document.getElementById('hero-comparison');
+    if (!container) {
+        console.log('Hero comparison container not found');
+        return;
+    }
+
+    const afterSection = container.querySelector('.hero-after-section');
+    const divider = container.querySelector('.hero-divider');
+    const handle = container.querySelector('.hero-handle');
+    const progress = container.querySelector('.hero-progress');
+
+    if (!afterSection || !divider) {
+        console.log('Missing required elements for hero comparison');
+        return;
+    }
+
+    let isDragging = false;
+
+    function updatePosition(percentage) {
+        // Ensure percentage is within bounds
+        percentage = Math.max(0, Math.min(100, percentage));
+
+        // Update the clip path
+        afterSection.style.clipPath = `polygon(${percentage}% 0%, 100% 0%, 100% 100%, ${percentage}% 100%)`;
+
+        // Update divider position
+        divider.style.left = `${percentage}%`;
+
+        // Update progress bar if it exists
+        if (progress) {
+            progress.style.width = `${percentage}%`;
+        }
+
+        return percentage;
+    }
+
+    function getPercentageFromEvent(clientX) {
+        const rect = container.getBoundingClientRect();
+        const x = clientX - rect.left;
+        return (x / rect.width) * 100;
+    }
+
+    // Mouse events
+    container.addEventListener('mousedown', function (e) {
+        isDragging = true;
+        const percentage = getPercentageFromEvent(e.clientX);
+        updatePosition(percentage);
+        e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', function (e) {
+        if (isDragging) {
+            const percentage = getPercentageFromEvent(e.clientX);
+            updatePosition(percentage);
+            e.preventDefault();
+        }
+    });
+
+    document.addEventListener('mouseup', function () {
+        isDragging = false;
+    });
+
+    // Touch events
+    container.addEventListener('touchstart', function (e) {
+        isDragging = true;
+        const touch = e.touches[0];
+        const percentage = getPercentageFromEvent(touch.clientX);
+        updatePosition(percentage);
+        e.preventDefault();
+    });
+
+    document.addEventListener('touchmove', function (e) {
+        if (isDragging) {
+            const touch = e.touches[0];
+            const percentage = getPercentageFromEvent(touch.clientX);
+            updatePosition(percentage);
+            e.preventDefault();
+        }
+    });
+
+    document.addEventListener('touchend', function () {
+        isDragging = false;
+    });
+
+    // Initialize at 50%
+    updatePosition(50);
+
+    console.log('Hero before/after initialized successfully');
+}// Setup Gallery Swiper
+function setupGallerySwiper() {
+    const swiperContainer = document.querySelector('.gallerySwiper');
+    if (!swiperContainer) {
+        console.log('Swiper container not found');
+        return;
+    }
+
+    if (typeof Swiper === 'undefined') {
+        console.log('Swiper library not loaded');
+        return;
+    }
+
+    try {
+        const swiper = new Swiper('.gallerySwiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            // Disable swiper on before/after containers
+            on: {
+                init: function () {
+                    setupGalleryBeforeAfter();
+                },
+                slideChange: function () {
+                    // Reinitialize before/after for new slide
+                    setTimeout(() => {
+                        setupGalleryBeforeAfter();
+                    }, 100);
+                }
+            }
+        });
+
+        console.log('Swiper initialized successfully');
+        return swiper;
+    } catch (error) {
+        console.error('Error initializing Swiper:', error);
+    }
+}
+
+// Gallery filtering
+function setupGalleryFilter() {
+    const filterButtons = document.querySelectorAll('.gallery-filter-btn');
+
+    if (!filterButtons.length) {
+        console.log('No filter buttons found');
+        return;
+    }
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const category = button.dataset.category;
+            console.log('Filtering by category:', category);
+        });
+    });
+}
+
+// Before/After functionality for new design
+function setupBeforeAfter() {
+    const containers = document.querySelectorAll('.ba-container');
+
+    if (!containers.length) {
+        console.log('No before/after containers found');
+    }
+
+    containers.forEach((container, index) => {
+        const overlay = container.querySelector('.ba-overlay');
+        const divider = container.querySelector('.ba-divider');
+        const handle = container.querySelector('.ba-handle');
+
+        if (!overlay || !divider || !handle) {
+            console.log(`Missing elements in container ${index}`);
+            return;
+        }
+
+        let isDragging = false;
+
+        function updatePosition(clientX) {
+            const rect = container.getBoundingClientRect();
+            const x = clientX - rect.left;
+            const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+
+            container.style.setProperty('--ba-position', `${percentage}%`);
+        }
+
+        // Mouse events
+        container.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            updatePosition(e.clientX);
+            handle.style.cursor = 'grabbing';
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                updatePosition(e.clientX);
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (isDragging) {
+                isDragging = false;
+                handle.style.cursor = 'grab';
+            }
+        });
+
+        // Touch events
+        container.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            updatePosition(e.touches[0].clientX);
+        });
+
+        container.addEventListener('touchmove', (e) => {
+            if (isDragging) {
+                e.preventDefault();
+                updatePosition(e.touches[0].clientX);
+            }
+        });
+
+        container.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+
+        console.log(`Before/after setup complete for container ${index}`);
+    });
+
+    // Also setup legacy BA sliders
+    setupLegacyBA();
+}
+
+// Legacy support for existing BA sliders
+function setupLegacyBA() {
+    ['hero-ba', 'ba1', 'ba2'].forEach(id => {
+        const wrap = document.getElementById(id);
+        if (!wrap) return;
+
+        const after = wrap.querySelector('.ba-after');
+        const handle = wrap.querySelector('.ba-handle');
+
+        if (!after || !handle) return;
+
+        const onMove = (clientX) => {
+            const r = wrap.getBoundingClientRect();
+            let x = Math.min(Math.max(clientX - r.left, 0), r.width);
+            const v = (x / r.width) * 100 + '%';
+            after.style.setProperty('--ba', v);
+            handle.style.left = v;
+        };
+
+        const drag = (e) => {
+            e.preventDefault();
+            const move = (ev) => onMove(ev.touches ? ev.touches[0].clientX : ev.clientX);
+            const up = () => {
+                window.removeEventListener('mousemove', move);
+                window.removeEventListener('touchmove', move);
+                window.removeEventListener('mouseup', up);
+                window.removeEventListener('touchend', up)
+            };
+            window.addEventListener('mousemove', move);
+            window.addEventListener('touchmove', move, { passive: false });
+            window.addEventListener('mouseup', up);
+            window.addEventListener('touchend', up);
+        };
+
+        wrap.addEventListener('mousedown', e => drag(e));
+        wrap.addEventListener('touchstart', e => drag(e), { passive: false });
+        wrap.addEventListener('mousemove', e => { if (e.buttons === 1) onMove(e.clientX) });
+
+        console.log(`Legacy BA setup complete for ${id}`);
+    });
+}
+
+// Before/After functionality for gallery slides
+function setupGalleryBeforeAfter() {
+    const containers = document.querySelectorAll('.gallery-ba-container');
+
+    containers.forEach((container, index) => {
+        const overlay = container.querySelector('.gallery-ba-overlay');
+        const divider = container.querySelector('.gallery-ba-divider');
+        const handle = container.querySelector('.gallery-ba-handle');
+
+        if (!overlay || !divider || !handle) {
+            return;
+        }
+
+        let isDragging = false;
+        let swiperInstance = null;
+
+        // Get swiper instance to control it
+        const swiperEl = container.closest('.swiper');
+        if (swiperEl && swiperEl.swiper) {
+            swiperInstance = swiperEl.swiper;
+        }
+
+        function updatePosition(percentage) {
+            percentage = Math.max(0, Math.min(100, percentage));
+            overlay.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0% 100%)`;
+            divider.style.left = `${percentage}%`;
+        }
+
+        function getPercentageFromEvent(clientX) {
+            const rect = container.getBoundingClientRect();
+            const x = clientX - rect.left;
+            return (x / rect.width) * 100;
+        }
+
+        // Mouse events
+        container.addEventListener('mousedown', function (e) {
+            isDragging = true;
+            // Disable swiper during interaction
+            if (swiperInstance) {
+                swiperInstance.disable();
+                swiperInstance.autoplay.stop();
+            }
+            const percentage = getPercentageFromEvent(e.clientX);
+            updatePosition(percentage);
+            e.stopPropagation(); // Prevent swiper events
+            e.preventDefault();
+        });
+
+        document.addEventListener('mousemove', function (e) {
+            if (isDragging) {
+                const percentage = getPercentageFromEvent(e.clientX);
+                updatePosition(percentage);
+                e.preventDefault();
+            }
+        });
+
+        document.addEventListener('mouseup', function () {
+            if (isDragging) {
+                isDragging = false;
+                // Re-enable swiper after interaction
+                if (swiperInstance) {
+                    setTimeout(() => {
+                        swiperInstance.enable();
+                        swiperInstance.autoplay.start();
+                    }, 100);
+                }
+            }
+        });
+
+        // Touch events
+        container.addEventListener('touchstart', function (e) {
+            isDragging = true;
+            // Disable swiper during touch interaction
+            if (swiperInstance) {
+                swiperInstance.disable();
+                swiperInstance.autoplay.stop();
+            }
+            const touch = e.touches[0];
+            const percentage = getPercentageFromEvent(touch.clientX);
+            updatePosition(percentage);
+            e.stopPropagation(); // Prevent swiper events
+            e.preventDefault();
+        }, { passive: false });
+
+        document.addEventListener('touchmove', function (e) {
+            if (isDragging) {
+                const touch = e.touches[0];
+                const percentage = getPercentageFromEvent(touch.clientX);
+                updatePosition(percentage);
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        document.addEventListener('touchend', function () {
+            if (isDragging) {
+                isDragging = false;
+                // Re-enable swiper after touch interaction
+                if (swiperInstance) {
+                    setTimeout(() => {
+                        swiperInstance.enable();
+                        swiperInstance.autoplay.start();
+                    }, 100);
+                }
+            }
+        });
+
+        // Initialize at 50%
+        updatePosition(50);
+    });
+
+    console.log('Gallery before/after sliders initialized');
+}
+
+// New Gallery Functionality
+function setupNewGallery() {
+    // Filter functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Update active filter button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            const filter = this.getAttribute('data-filter');
+            
+            // Filter projects
+            projectCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                
+                if (filter === 'all' || category === filter) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+    
+    // Before/After toggle functionality
+    const beforeAfterWrappers = document.querySelectorAll('.before-after-wrapper');
+    
+    beforeAfterWrappers.forEach(wrapper => {
+        let isRevealed = false;
+        
+        // Click to toggle
+        wrapper.addEventListener('click', function() {
+            isRevealed = !isRevealed;
+            
+            if (isRevealed) {
+                wrapper.classList.add('revealed');
+            } else {
+                wrapper.classList.remove('revealed');
+            }
+        });
+        
+        // Auto reveal on hover (desktop only)
+        if (window.innerWidth > 768) {
+            wrapper.addEventListener('mouseenter', function() {
+                if (!isRevealed) {
+                    wrapper.classList.add('revealed');
+                }
+            });
+            
+            wrapper.addEventListener('mouseleave', function() {
+                if (!isRevealed) {
+                    wrapper.classList.remove('revealed');
+                }
+            });
+        }
+        
+        // Double click to reset
+        wrapper.addEventListener('dblclick', function() {
+            isRevealed = false;
+            wrapper.classList.remove('revealed');
+        });
+    });
+    
+    console.log('New gallery functionality initialized');
+}
+</script>
+
+
+</section></section></body></html>
